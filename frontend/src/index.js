@@ -1,10 +1,26 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import App from "./App";
+import CryptoContext from "./CryptoContext";
+// import "react-alice-carousel/lib/react-alice-carousel"
+import "react-alice-carousel/lib/alice-carousel.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <React.StrictMode>
+//     <CryptoContext>
+//     <App />
+//     </CryptoContext>
+    
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <CryptoContext>
+      <App />
+    </CryptoContext>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
