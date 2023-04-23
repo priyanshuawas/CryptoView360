@@ -1,9 +1,9 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import Header from "./homePageComponents/Header";
 import HomePage from "./pages/HomePage";
 import CoinPage from "./pages/coinPage";
 import { makeStyles } from "@material-ui/core";
 import './App.css'
+import Home from "./home";
 
 const useStyles = makeStyles(() => ({
   App: {
@@ -19,9 +19,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className={classes.App}>
-        <Header />
-        <Route path="/" component={HomePage} exact />
+        <Route path="/homepage" component={HomePage} exact />
         <Route path="/coins/:id" component={CoinPage} exact />
+        <Route path="/" component={Home} exact />
       </div>
     </BrowserRouter>
   );
