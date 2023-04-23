@@ -1,5 +1,4 @@
-.banner .container {
-  color: white;
+.banner .container{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 4rem auto;
@@ -9,7 +8,7 @@
 }
 
 .banner .left > *{
-  color: white;
+  color: black;
   padding: 1rem;
 }
 

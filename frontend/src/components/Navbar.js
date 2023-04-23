@@ -2,7 +2,7 @@
 // import Select from "@mui/material/Select";
 import { useState } from "react";
 import "../index.css";
-import classes from "./Navbar.module.css";
+import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
@@ -12,12 +12,12 @@ const Navbar = () => {
   };
   // const [currency, setCurrency] = useState("INR");
   return (
-    <div className={classes.header}>
-      <div className={classes.container}>
-        <h1>
-          Crypto<span className={classes.colors}>View360</span>
+    <div className="header">
+      <div className="container">
+        <h1 style={{color: "black"}}>
+          Crypto<span className="colors">View360</span>
         </h1>
-        <ul className={faBars ? classes.nav_menu : classes.nav_menu.active}>
+        <ul className={faBars ? "nav_menu" : "nav_menu active"}>
           <li>
             <a href="/">Coins</a>
           </li>
@@ -49,7 +49,7 @@ const Navbar = () => {
             </MenuItem>
           </Select> */}
         </ul>
-        <div className={classes.hamburger} onClick={handleFaBars}>
+        <div className="hamburger" onClick={handleFaBars}>
           {faBars ? (
             <FaTimes size={20} style={{ color: "#333" }} />
           ) : (

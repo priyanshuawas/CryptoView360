@@ -38,8 +38,8 @@ const Featured = () => {
                   <img src={coin.image} alt="" />
                 </div>
                 <div>
-                  <h5>{coin.name}</h5>
-                  <p>${coin.current_price.toLocaleString()}</p>
+                  <h5 style={{color: "black"}}>{coin.name}</h5>
+                  <p style={{color: "black"}}>${coin.current_price.toLocaleString()}</p>
                 </div>
 
                 {coin.price_change_percentage_24h < 0 ? (

@@ -1,7 +1,8 @@
 .featured {
+  background-color: black;
   width: 100%;
   padding: 8rem 0;
-  background-color: var(--background);
+  /* background-color: var(--background); */
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 90%);
 }
 
@@ -35,6 +36,7 @@
 }
 
 .featured .right .card {
+  background-color: white;
   display: flex;
   flex-direction: column;
   padding: 12px 22px;
@@ -52,6 +54,7 @@
 }
 
 .featured .card .top {
+  color: black;
   display: flex;
   flex-direction: column;
 }
