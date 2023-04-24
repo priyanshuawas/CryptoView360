@@ -1,13 +1,13 @@
-.banner .container{
+.banner .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin: 4rem auto;
+  margin: 1rem auto;
   justify-content: center;
   align-items: center;
   padding: 1rem;
 }
 
-.banner .left > *{
+.banner .left > * {
   color: black;
   padding: 1rem;
 }

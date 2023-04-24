@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer">
       <div className="container">
         <div className="col col-1">
-          <h1>
+          <h1 style={{ color: "white" }}>
             Crypto<span className="primary">View360</span>
           </h1>
         </div>

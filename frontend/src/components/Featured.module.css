@@ -22,7 +22,12 @@
 }
 
 .featured .left p {
+  color: white;
   margin: 1.5rem 0;
+}
+
+.featured .left h2 {
+  color: white;
 }
 
 .featured .left .btn {
@@ -54,7 +59,7 @@
 }
 
 .featured .card .top {
-  color: black;
+  color: white;
   display: flex;
   flex-direction: column;
 }

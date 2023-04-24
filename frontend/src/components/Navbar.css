@@ -6,7 +6,7 @@
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 10;
+  z-index: 1000;
 }
 
 .header .container {
@@ -16,6 +16,10 @@
   align-items: center;
   height: 100%;
   padding: 1rem;
+}
+
+.header .container h1 {
+  font-size: 30px;
 }
 
 .colors {
@@ -31,7 +35,7 @@
 }
 
 .nav_menu a {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #333;
 }
@@ -61,6 +65,7 @@
   }
 
   .nav_menu.active {
+    display: none;
     right: 0;
   }
 
