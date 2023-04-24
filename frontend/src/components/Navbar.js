@@ -1,100 +1,72 @@
-// // import classes from "./Navbar.module.css";
+// import MenuItem from "@mui/material/MenuItem";
+// import Select from "@mui/material/Select";
+import { MenuItem, Select } from "@material-ui/core";
+import { useState } from "react";
+import "../index.css";
+import "./Navbar.css";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { CryptoState } from "../CryptoContext";
+import { Link } from "react-router-dom";
+// import Home from "../home";
+// import Middle from "../middle";
+// import News from "../homePageComponents/News";
+// import CoinPage from "../pages/coinPage";
 
-// // const Navbar = () => {
-// //   return <div className={classes.header}>Navbar</div>;
-// // };
+const Navbar = () => {
+  const [faBars, setFaBars] = useState(false);
+  const handleFaBars = () => {
+    setFaBars(!faBars);
+  };
+  const { currency, setCurrency } = CryptoState();
+  // const [currency, setCurrency] = useState("INR");
+  return (
+    <div className="header">
+      <div className="container">
+        <h1>
+          <Link to={"/"}>
+            Crypto
+            <span className="colors">View360</span>
+          </Link>
+        </h1>
+        <ul className={faBars ? "nav_menu" : "nav_menu active"}>
+          <li>
+            <Link to="/homepage">Coins</Link>
+          </li>
+          <li>
+            <Link to="/articles">Articles</Link>
+          </li>
+          <li>
+            <Link to="/">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/">About Us</Link>
+          </li>
+          <Select
+            variant="outlined"
+            style={{
+              color: "black",
+              border: "1px solid black",
+              width: 100,
+              height: 40,
+              marginRight: 15,
+            }}
+            value={currency}
+            onChange={(e) => setCurrency(e.target.value)}
+          >
+            <MenuItem value={"USD"}>USD</MenuItem>
+            <MenuItem value={"INR"}>INR</MenuItem>
+          </Select>
+        </ul>
+        <div className="hamburger" onClick={handleFaBars}>
+          {faBars ? (
+            <FaTimes size={20} style={{ color: "#333" }} />
+          ) : (
+            <FaBars size={20} style={{ color: "#333" }} />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
 
-// // export default Navbar;
-
-// import React from "react";
-// // import AuthModal from "./Authentication/AuthModal";
-// import {
-//   AppBar,
-//   Container,
-//   Toolbar,
-//   Typography,
-//   Select,
-//   MenuItem,
-//   makeStyles,
-//   createTheme,
-//   ThemeProvider,
-// } from "@material-ui/core"
-// // import UserSidebar from "./Authentication/UserSidebar";
-// import { Link } from "react-router-dom";
-// // import { CurrencyState } from "../CurrContext";
-// const useStyles = makeStyles(() => ({
-//   link: {
-//     flex: 1,
-//   },
-//   logo: {
-//     color: "#FF2E63",
-//     fontFamily: "inherit",
-//     fontWeight: "bold",
-//     cursor: "pointer",
-//   },
-//   headings: {
-//     color: "#08D9D6",
-//     fontFamily: "inherit",
-//     fontWeight: 600,
-//     cursor: "pointer",
-//     "&:hover": {
-//       color: "#FF2E63",
-//       transition: "0.2s ease-in-out",
-//     },
-//   },
-// }));
-// const Navbar = () => {
-//   const classes = useStyles();
-//   const darkTheme = createTheme({
-//     palette: {
-//       primary: { main: "#252A34" },
-//       type: "dark",
-//     },
-//   });
-
-//   //   const { currency, setCurrency, user } = CurrencyState();
-//   return (
-//     <ThemeProvider theme={darkTheme}>
-//       <AppBar position="static">
-//         <Container className={classes.nav}>
-//           <Toolbar>
-//             <Link to="/" className={classes.link}>
-//               <Typography className={classes.logo} variant="h5">
-//                 <span style={{ color: "white" }}>Crypto </span>Geeks
-//               </Typography>
-//             </Link>
-//             <Link to="/home" className={classes.link}>
-//               <Typography className={classes.headings} variant="h6">
-//                 Coins
-//               </Typography>
-//             </Link>
-//             <Link to="/articles" className={classes.link}>
-//               <Typography className={classes.headings} variant="h6">
-//                 Articles
-//               </Typography>
-//             </Link>
-//             <Select
-//               variant="outlined"
-//               value={0}
-//               style={{
-//                 width: 100,
-//                 height: 40,
-//               }}
-//               //   onChange={(e) => setCurrency(e.target.value)}
-//             >
-//               <MenuItem value={"INR"} style={{ color: "#08D9D6" }}>
-//                 INR
-//               </MenuItem>
-//               <MenuItem value={"USD"} style={{ color: "#08D9D6" }}>
-//                 USD
-//               </MenuItem>
-//             </Select>
-//             {/* {user ? <UserSidebar /> : <AuthModal />} */}
-//           </Toolbar>
-//         </Container>
-//       </AppBar>
-//     </ThemeProvider>
-//   );
-// };
-
-// export default Navbar;
+export default Navbar;

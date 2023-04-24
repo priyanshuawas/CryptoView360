@@ -1,0 +1,42 @@
+.banner .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 1rem auto;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.banner .left > * {
+  color: black;
+  padding: 1rem;
+}
+
+.banner h1 {
+  padding: 1rem 0;
+}
+
+.banner .input_container {
+  padding: 1rem 0;
+}
+
+.banner .right {
+  padding: 1rem;
+}
+
+.banner .img_container {
+  width: 100%;
+  display: flex;
+}
+
+.banner img {
+  max-width: 80%;
+  margin: auto;
+}
+
+@media screen and (max-width: 940px) {
+  .banner .container {
+    grid-template-columns: 1fr;
+    margin: 1rem 0;
+  }
+}
