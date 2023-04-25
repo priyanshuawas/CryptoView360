@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 8000;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -10,8 +10,10 @@ const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
 const passportgoogle = require('./config/passport-google-oauth2-strategy');
+const passportLocal = require('./config/passport-local-strategy');
 const MongoStore = require('connect-mongo');
 const cookieParser = require('cookie-parser');
+
 
 // setting cookie parser in middleware
 app.use(cookieParser());
@@ -21,7 +23,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(session({
     name: 'BeeSocial',
     // todo change secret before deployment in production mode
-    secret: process.env.sessionSecret,
+    secret: 'blahsomething',
     saveUninitialized: false,
     resave:false,
     cookie: {
@@ -33,6 +35,9 @@ app.use(session({
             mongoUrl: 'mongodb://localhost/cryptoView360'
         })
  }));
+
+
+
 
  app.use(passport.initialize());
  app.use(passport.session());

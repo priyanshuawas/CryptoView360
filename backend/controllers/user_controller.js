@@ -10,8 +10,10 @@ module.exports.createSession = function (req, res) {
     // console.log("inside create session");
     // return res.redirect('/users/profile');
     // res.render('user_profile');
+    console.log(req.user);
     return res.status(200).json({
-        message: "Session created successfully"
+        message: "Session created successfully",
+        user: req.user
     })
   }
 
