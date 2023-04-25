@@ -1,5 +1,6 @@
 import classes from "./Additional.module.css";
 import Crypto from "../assets/trading.png";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 const Additional = () => {
   return (
@@ -19,7 +20,8 @@ const Additional = () => {
             each month with no lockups and no limits.
           </p>
           <div className="input-container">
-            <button className="btn">Learn More</button>
+        
+            <Link className="btn" to="/articles" > Learn More</Link>
           </div>
         </div>
       </div>

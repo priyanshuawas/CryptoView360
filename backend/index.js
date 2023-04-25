@@ -9,11 +9,9 @@ require('dotenv').config();
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
-const passport = require('passport');
-const passportLocal = require('./config/passport-local-strategy.js');
-const passportJWt = require('./config/passport-jwt-strategy');
 const passportgoogle = require('./config/passport-google-oauth2-strategy');
 const MongoStore = require('connect-mongo');
+const cookieParser = require('cookie-parser');
 
 // setting cookie parser in middleware
 app.use(cookieParser());

@@ -14,6 +14,7 @@ const Featured = () => {
   const { currency, symbol } = CryptoState();
 
   useEffect(() => {
+    console.log("inside useEffefct");
     axios
       .get(Top6Coins(currency))
       .then((res) => {
