@@ -1,12 +1,13 @@
 // import MenuItem from "@mui/material/MenuItem";
 // import Select from "@mui/material/Select";
 import { MenuItem, Select } from "@material-ui/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../index.css";
 import "./Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { CryptoState } from "../CryptoContext";
 import { Link } from "react-router-dom";
+// import { UserApi } from "../config/UserApi";
 // import Home from "../home";
 // import Middle from "../middle";
 // import News from "../homePageComponents/News";
@@ -17,8 +18,59 @@ const Navbar = () => {
   const handleFaBars = () => {
     setFaBars(!faBars);
   };
+  const [user, setUser] = useState(null);
+  const [userName, setUserName] = useState("");
   const { currency, setCurrency } = CryptoState();
-  // const [currency, setCurrency] = useState("INR");
+
+  const getUserData = () => {
+    if (user) {
+      // window.open("http://localhost:8000/auth/logout", "_self");
+      window.location.href = "http://localhost:8000/auth/logout";
+      setUser(null);
+      setUserName("");
+    } else {
+      // window.open("http://localhost:8000/auth/google");
+      window.location.href = "http://localhost:8000/auth/google";
+    }
+    // UserApi.getUserData()
+    //   .then(({ user }) => {
+    //     console.log(user);
+    //     setUserName(user.name);
+    //   })
+    //   .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    const getUser = async () => {
+      await fetch("http://localhost:8000/auth/login/success", {
+        method: "GET",
+        credentials: "include",
+        header: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      })
+        .then((res) => {
+          if (res.status === 200) {
+            return res.json();
+          }
+          throw new Error("authentication has been failed");
+        })
+        .then((resObject) => {
+          setUser(resObject);
+          setUserName(resObject.user.name);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getUser();
+  }, []);
+
+  console.log("ye data hai", user);
+  console.log("ye name hai", userName);
+
   return (
     <div className="header">
       <div className="container">
@@ -28,6 +80,7 @@ const Navbar = () => {
             <span className="colors">View360</span>
           </Link>
         </h1>
+        <div>{userName !== "" ? userName : ""}</div>
         <ul className={faBars ? "nav_menu" : "nav_menu active"}>
           <li>
             <Link to="/homepage">Coins</Link>
@@ -41,6 +94,9 @@ const Navbar = () => {
           <li>
             <Link to="/">About Us</Link>
           </li>
+          <div onClick={getUserData} style={{ cursor: "pointer" }}>
+            {user ? "logout" : "login"}
+          </div>
           <Select
             variant="outlined"
             style={{
