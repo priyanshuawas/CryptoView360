@@ -1,45 +1,60 @@
-const User = require('../models/user');
-const db = require('../config/mongoose');
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
-
+const User = require("../models/user");
+const db = require("../config/mongoose");
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
 
 module.exports.createSession = function (req, res) {
-    
-    // console.log("inside create session");
-    // return res.redirect('/users/profile');
-    // res.render('user_profile');
-    console.log(req.user);
-    return res.status(200).json({
-        message: "Session created successfully",
-        user: req.user
-    })
-  }
+  // console.log("inside create session");
+  // return res.redirect('/users/profile');
+  // res.render('user_profile');
+  console.log("mai bol rha hu create session se");
+  console.log(req.user);
 
-  
-  module.exports.destroySession = function(req, res){
-    // req.logout();
+  // return res.status(200).json({
+  //   message: "Session created successfully",
+  //   user: req.user,
+  // });
+  return;
 
-    // return res.redirect('/');
-    req.logout(function(err) {
-      if (err) { return next(err); }
-      req.flash('success', 'You have logged out');
+  // setTimeout(() => {
+  //   console.log("hello");
+  //   return res.status(200).json({
+  //     message: "Session created successfully",
+  //     user: req.user,
+  //   });
+  // }, 0);
+  // return res.redirect("http://localhost:3000/");
 
-  res.redirect('/');
-});
+  // .then(() => {
+  //   res.redirect("https://localhost:3000");
+  // });
+};
 
-}
+module.exports.destroySession = function (req, res) {
+  // req.logout();
 
-module.exports.destroySession = function(req, res){
-    // req.logout();
+  // return res.redirect('/');
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash("success", "You have logged out");
 
-    // return res.redirect('/');
-    req.logout(function(err) {
-      if (err) { return next(err); }
-      req.flash('success', 'You have logged out');
+    res.redirect("/");
+  });
+};
 
-  res.redirect('/');
-});
+module.exports.destroySession = function (req, res) {
+  // req.logout();
 
-}
+  // return res.redirect('/');
+  req.logout(function (err) {
+    if (err) {
+      return next(err);
+    }
+    req.flash("success", "You have logged out");
+
+    res.redirect("/");
+  });
+};
