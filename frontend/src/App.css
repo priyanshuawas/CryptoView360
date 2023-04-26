@@ -9,3 +9,14 @@ a{
     text-decoration: none;
     color: gold;
 }
+.makeStyles-container-30  {
+    width: 75% ;
+    display: flex;
+    padding: 40px;
+    margin-top: -23px !important;
+    align-items: center !important;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  

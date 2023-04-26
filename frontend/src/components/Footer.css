@@ -1,6 +1,7 @@
 .footer {
   /* background-color: var(--background); */
-  background-color: black;
+  /* background-color: rgba(0, 0, 0, 0.788); */
+  background-color: #14161a;
   padding: 5rem 0;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0% 100%);
 }
@@ -15,6 +16,7 @@
 .footer .col {
   display: flex;
   flex-direction: column;
+  color: aliceblue;
 }
 
 .footer .bar {
