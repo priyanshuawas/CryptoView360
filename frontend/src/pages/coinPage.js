@@ -26,7 +26,10 @@ const CoinPage = () => {
     }, []);
 
     const useStyles = makeStyles((theme) => ({
+        
         container: {
+            color: "white",
+            backgroundColor: "#14161a",
             display: "flex",
             [theme.breakpoints.down("md")]: {
                 flexDirection: "column",
@@ -35,32 +38,41 @@ const CoinPage = () => {
         },
         sidebar: {
             width: "30%",
+            color: "white",
             [theme.breakpoints.down("md")]: {
                 width: "100%",
             },
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginTop: 25,
+            // marginTop: 25, 
             borderRight: "2px solid grey",
+            // marginTop: "-10px"
         },
         heading: {
             fontWeight: "bold",
-            marginBottom: 20,
+            // marginBottom: 20,
             fontFamily: "Montserrat",
         },
         description: {
+            alignItems: "center",
+            color: "white",
             width: "100%",
             fontFamily: "Montserrat",
             padding: 25,
             paddingBottom: 15,
             paddingTop: 0,
             textAlign: "justify",
+            [theme.breakpoints.down("md")]: {
+                display: "flex",
+                justifyContent: "center",
+            },
         },
         marketData: {
+            color: "white",
             alignSelf: "start",
             padding: 25,
-            paddingTop: 10,
+            // paddingTop: 10,
             width: "100%",
             [theme.breakpoints.down("md")]: {
                 display: "flex",
@@ -78,7 +90,7 @@ const CoinPage = () => {
 
     const classes = useStyles();
 
-    if (!coin) return <LinearProgress style={{ backgroundColor: "gold" }} />;
+    if (!coin) return <LinearProgress style={{ backgroundColor: "gold", color: "white" }} />;
 
     return (
         <div className={classes.container}>
@@ -96,7 +108,7 @@ const CoinPage = () => {
                     {ReactHtmlParser(coin?.description.en.split(". ")[0])}.
                 </Typography>
                 <div className={classes.marketData}>
-                    <span style={{ display: "flex" }}>
+                   <span style={{ display: "flex" }}>
                         <Typography variant="h5" className={classes.heading}>
                             Rank:
                         </Typography>
@@ -111,7 +123,9 @@ const CoinPage = () => {
                         </Typography>
                     </span>
 
-                    <span style={{ display: "flex" }}>
+                    <span style={{ display: "flex",
+                        color: "white",
+                            }}>
                         <Typography variant="h5" className={classes.heading}>
                             Current Price:
                         </Typography>
@@ -128,7 +142,7 @@ const CoinPage = () => {
                             )}
                         </Typography>
                     </span>
-                    <span style={{ display: "flex" }}>
+                    <span style={{ display: "flex", fontSize:10}}>
                         <Typography variant="h5" className={classes.heading}>
                             Market Cap:
                         </Typography>
@@ -137,6 +151,7 @@ const CoinPage = () => {
                             variant="h5"
                             style={{
                                 fontFamily: "Montserrat",
+                                "font-size": "20px"
                             }}
                         >
                             {symbol}{" "}

@@ -97,7 +97,7 @@ const Navbar = () => {
          <li> <div  onClick={getUserData} style={{ cursor: "pointer",
          'font-size': "1rem",
          'font-weight': "600",
-         color: "#333",
+         color: "white",
         }}>
             {user ? "logout" : "login"}
           </div>
@@ -105,8 +105,8 @@ const Navbar = () => {
         <li>  <Select
             variant="outlined"
             style={{
-              color: "black",
-              border: "1px solid black",
+              color: "white",
+              border: "1px solid white",
               width: 100,
               height: 28,
               // marginRight: 15,
