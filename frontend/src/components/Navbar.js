@@ -94,17 +94,22 @@ const Navbar = () => {
           <li>
             <Link to="/">About Us</Link>
           </li>
-          <div onClick={getUserData} style={{ cursor: "pointer" }}>
+         <li> <div  onClick={getUserData} style={{ cursor: "pointer",
+         'font-size': "1rem",
+         'font-weight': "600",
+         color: "#333",
+        }}>
             {user ? "logout" : "login"}
           </div>
-          <Select
+          </li>
+        <li>  <Select
             variant="outlined"
             style={{
               color: "black",
               border: "1px solid black",
               width: 100,
-              height: 40,
-              marginRight: 15,
+              height: 28,
+              // marginRight: 15,
             }}
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
@@ -112,6 +117,7 @@ const Navbar = () => {
             <MenuItem value={"USD"}>USD</MenuItem>
             <MenuItem value={"INR"}>INR</MenuItem>
           </Select>
+          </li>
         </ul>
         <div className="hamburger" onClick={handleFaBars}>
           {faBars ? (
