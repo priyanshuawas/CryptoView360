@@ -7,9 +7,9 @@ const Banner = () => {
       <div className={classes.container}>
         {/* left side */}
         <div className={classes.left}>
-          <p>Buy & Sell Crypto 24/7 using your retirement account</p>
-          <h1>Invest in Cryptocurreny with Your IRA</h1>
-          <p>Buy, Sell, and store hundreds of cryptocurrencies</p>
+          <p>Welcome to CryptoView360 </p>
+          <h1>Track and Analyze Crypto Market with CryptoView360</h1>
+          <p>Hundreds of Crypto Coins Await You: Don't Miss Out on the Opportunity</p>
           <div className={classes.input_container}>
             {/* <input type="email" placeholder="Enter your email" /> */}
             <button className="btn">Learn More</button>
