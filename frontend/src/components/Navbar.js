@@ -88,12 +88,12 @@ const Navbar = () => {
           <li>
             <Link to="/articles">Articles</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/">Contact Us</Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link to="/">About Us</Link>
-          </li>
+          </li> */}
          <li> <div  onClick={getUserData} style={{ cursor: "pointer",
          'font-size': "1rem",
          'font-weight': "600",
