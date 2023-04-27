@@ -26,7 +26,7 @@ export default class News extends Component {
       page: 1,
     },
     headers: {
-      "x-api-key": "FVhpiEfZSZiqAPP8O_aDNaE1-0o6Mn5b83yu6rjL9Rs",
+      "x-api-key": "tTdkdjjm859A8K9uV8iBS2E2zQyRdL74llD0ECpUU7g",
     },
   };
 
