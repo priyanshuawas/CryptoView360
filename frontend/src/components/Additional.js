@@ -13,11 +13,9 @@ const Additional = () => {
 
         {/* right */}
         <div className={classes.right}>
-          <h2 style={{color: '#ff2e63'}}>Earn passive income with crypto.</h2>
+          <h2 style={{color: '#ff2e63'}}>Stay updated with the most important stories of the day.</h2>
           <p>
-            Earn up to 12% annual rewards on 30+ digital assets. Simply hold
-            your assets in the app to automatically earn rewards at the end of
-            each month with no lockups and no limits.
+          Keep up with the latest trends and developments in the crypto world. Whether you’re a beginner or an expert, you'll find the information and insights you need on our website.
           </p>
           <div className="input-container">
         
