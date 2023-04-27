@@ -80,8 +80,10 @@ const Navbar = () => {
             <span className="colors">View360</span>
           </Link>
         </h1>
-        <div>{userName !== "" ? userName : ""}</div>
         <ul className={faBars ? "nav_menu" : "nav_menu active"}>
+          <span style={{ color: "white" }}>
+            {userName !== "" ? "Hello! " + userName + " 👋🏼" : ""}
+          </span>
           <li>
             <Link to="/homepage">Coins</Link>
           </li>
@@ -94,29 +96,37 @@ const Navbar = () => {
           {/* <li>
             <Link to="/">About Us</Link>
           </li> */}
-         <li> <div  onClick={getUserData} style={{ cursor: "pointer",
-         'font-size': "1rem",
-         'font-weight': "600",
-         color: "white",
-        }}>
-            {user ? "logout" : "login"}
-          </div>
+          <li>
+            {" "}
+            <Select
+              variant="outlined"
+              style={{
+                color: "white",
+                border: "1px solid white",
+                width: 100,
+                height: 28,
+                // marginRight: 15,
+              }}
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+            >
+              <MenuItem value={"USD"}>USD</MenuItem>
+              <MenuItem value={"INR"}>INR</MenuItem>
+            </Select>
           </li>
-        <li>  <Select
-            variant="outlined"
-            style={{
-              color: "white",
-              border: "1px solid white",
-              width: 100,
-              height: 28,
-              // marginRight: 15,
-            }}
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-          >
-            <MenuItem value={"USD"}>USD</MenuItem>
-            <MenuItem value={"INR"}>INR</MenuItem>
-          </Select>
+          <li>
+            {" "}
+            <div
+              onClick={getUserData}
+              style={{
+                cursor: "pointer",
+                "font-size": "1rem",
+                "font-weight": "600",
+                color: "white",
+              }}
+            >
+              {user ? "logout" : "login"}
+            </div>
           </li>
         </ul>
         <div className="hamburger" onClick={handleFaBars}>
